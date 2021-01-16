@@ -21,12 +21,12 @@ function setup() {
 	ground1=new Ground(600,680,1200,20);
 	//World.add(myWorld, ground1);
 
-	paper1= new Paper(400,600,40,40);
+	paper1= new Paper(200,600,25,25);
 	//World.add(myWorld, paper1);
 
-	left=new Ground(800,655,20,50);
-	bottom=new Ground(850,675,100,20);
-	right=new Ground(900,655,20,50);
+	left=new Ground(740,635,20,100);
+	bottom=new Ground(850,675,200,20);
+	right=new Ground(940,635,20,100);
 	Engine.run(engine);
   
 }
@@ -36,6 +36,7 @@ function draw() {
   background(0);
   //Engine.update(engine)
 	paper1.display();
+	fill("brown")
 	ground1.display();
 	fill("white")
 	left.display();
@@ -43,8 +44,8 @@ function draw() {
 	bottom.display();
 }
 function keyPressed(){
-	if(keyDown(UP_ARROW)){
-		Matter.Body.applyForce(paper1.body, paper1.body.position, {x:80, y:-20})
+	if(keyCode===UP_ARROW){
+		Matter.Body.applyForce(paper1.body, paper1.body.position, {x:60, y:-40})
 	}
 
 }
